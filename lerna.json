@@ -1,0 +1,5 @@
+{
+  "version": "independent",
+  "npmCient": "yarn",
+  "useWorkspaces": true
+}

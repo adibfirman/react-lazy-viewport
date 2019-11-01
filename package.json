@@ -1,0 +1,12 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.18.3",
+    "microbundle": "^0.12.0-next.6"
+  },
+  "workspaces": [
+    "packages/*",
+    "example"
+  ]
+}

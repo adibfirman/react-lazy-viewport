@@ -1,0 +1,17 @@
+{
+  "name": "@adibfirman/react-lazy-viewport",
+  "version": "1.0.0",
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/foo.m.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "microbundle watch --jsx React.createElement",
+    "build": "microbundle --jsx React.createElement"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
+  }
+}
