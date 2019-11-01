@@ -1,7 +1,6 @@
 import React from "react";
 import LazyViewport from "@adibfirman/react-lazy-viewport";
 import logo from "./logo.svg";
-import {} from "module";
 import "./App.css";
 
 const App: React.FC = () => {
