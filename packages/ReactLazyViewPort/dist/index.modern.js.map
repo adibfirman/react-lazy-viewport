@@ -1,1 +1,0 @@
-{"version":3,"file":"index.modern.js","sources":["../src/index.tsx"],"sourcesContent":["import React from \"react\";\n\nfunction ReactLazyViewport(): JSX.Element {\n  return <div>hello hello world this is awesome</div>;\n}\n\nexport default ReactLazyViewport;\n"],"names":["React"],"mappings":"oCAEA,WACE,OAAOA"}

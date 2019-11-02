@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "@adibfirman/react-lazy-viewport": ["ReactLazyViewPort/src"]
+      "@adibfirman/react-lazy-viewport": ["react-lazy-viewport/src"]
     }
   }
 }

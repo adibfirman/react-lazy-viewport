@@ -1,12 +1,12 @@
 import React from "react";
-import LazyViewport from "@adibfirman/react-lazy-viewport";
+import ReactLazyViewport from "@adibfirman/react-lazy-viewport";
 import logo from "./logo.svg";
 import "./App.css";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <LazyViewport />
+      <ReactLazyViewport />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
