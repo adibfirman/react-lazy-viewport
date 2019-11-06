@@ -1,7 +1,20 @@
-import React from "react";
+type AbcType<T> = {
+  result: T;
+  status: 0 | 1;
+};
 
-function ReactLazyViewport(): JSX.Element {
-  return <div>hello hello world test again</div>;
+function initMyFunc<T>(asyncComp: () => Promise<{ default: T }>): AbcType<T> {
+  const callComp = asyncComp();
+
+  abc.status = 0;
+  callComp.then(objectData => {
+    abc.status = 1;
+    abc.result = "dsadasdsadsa";
+  });
+
+  return abc;
 }
 
-export default ReactLazyViewport;
+const loadComp = initMyFunc(() => import("./Test"));
+
+console.log(loadComp);
