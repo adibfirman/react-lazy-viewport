@@ -4,8 +4,7 @@ import ReactLazyViewport from "@adibfirman/react-lazy-viewport";
 const Test = ReactLazyViewport(() => import("./components/Test"));
 
 function App(): JSX.Element {
-  console.log(Test);
-  return <div />;
+  return <Test />;
 }
 
 export default App;

@@ -1,20 +1,21 @@
-type AbcType<T> = {
-  result: T;
-  status: 0 | 1;
-};
+import React, { useEffect, Fragment } from "react";
 
-function initMyFunc<T>(asyncComp: () => Promise<{ default: T }>): AbcType<T> {
-  const callComp = asyncComp();
+export default function initMyFunc<T>(
+  asyncComp: () => Promise<{ default: T }>
+): Function {
+  function ReactInitThis(): JSX.Element {
+    const [theComponent, setComponent] = React.useState<T>();
 
-  abc.status = 0;
-  callComp.then(objectData => {
-    abc.status = 1;
-    abc.result = "dsadasdsadsa";
-  });
+    useEffect(() => {
+      setTimeout(() => {
+        asyncComp().then(objectData => {
+          setComponent(objectData.default);
+        });
+      }, 3000);
+    }, []);
 
-  return abc;
+    return <Fragment>{theComponent}</Fragment>;
+  }
+
+  return ReactInitThis;
 }
-
-const loadComp = initMyFunc(() => import("./Test"));
-
-console.log(loadComp);
