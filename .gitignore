@@ -1,13 +1,11 @@
 node_modules
+dist
 
-packages/react-lazy-viewport/dist
-
-example/.pnp
+.pnp
 example.pnp.js
-example/coverage
-example/build
-example/.DS_Store
-example/.env.local
-example/.env.development.local
-example/.env.test.local
-example/.env.production.local
+coverage
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
