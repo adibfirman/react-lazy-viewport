@@ -5,14 +5,8 @@ export default function initMyFunc<T>(
 ): Function {
   function ReactInitThis(): JSX.Element {
     const [theComponent, setComponent] = React.useState<T>();
-    const [abc, setAbc] = React.useState(123);
 
     useEffect(() => {
-      console.log(abc);
-    }, []);
-
-    useEffect(() => {
-      console.log(abc);
       setTimeout(() => {
         asyncComp().then(objectData => {
           setComponent(objectData.default);

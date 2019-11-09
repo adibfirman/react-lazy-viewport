@@ -12,6 +12,12 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.11",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "eslint": "^6.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
     "microbundle": "^0.12.0-next.6"
   },
   "peerDependencies": {
