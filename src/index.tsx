@@ -1,7 +1,10 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, useCallback, Fragment, useEffect } from "react";
 
 import { makeID } from "../utils";
-import { IntersectionObserverEntry } from "./intersection-observer.d";
+import {
+  IntersectionObserverEntry,
+  IntersectionObserver
+} from "./intersection-observer.d";
 
 export default function initMyFunc<T>(
   asyncComp: () => Promise<{ default: T }>
@@ -15,32 +18,36 @@ export default function initMyFunc<T>(
 
   function ReactInitThis(): JSX.Element {
     const [theComponent, setComponent] = useState<T>();
-    const configs = { rootMargin: "0% 0% 15% 0%" };
-    const observer = new IntersectionObserver(callbackIO, configs);
+    const callbackIO = useCallback(funcCallbackIO, []);
+    const observer = React.useRef<IntersectionObserver | null>(null);
 
-    function callbackIO(entries: IntersectionObserverEntry[]) {
+    function funcCallbackIO(entries: IntersectionObserverEntry[]) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           loadComponent(() => {
-            observer.unobserve(entry.target);
+            observer.current && observer.current.unobserve(entry.target);
           });
         }
       });
     }
 
-    function loadComponent(cb: Function) {
+    function loadComponent(cb?: Function) {
       const init = asyncComp();
       init.then(objData => {
-        cb();
+        cb && cb();
         setComponent(objData.default);
       });
     }
 
     useEffect(() => {
-      const element = document.querySelector(`.${className}`);
+      if (!!window.IntersectionObserver) {
+        const element = document.querySelector(`.${className}`);
+        const configs = { rootMargin: "0% 0% 15% 0%" };
+        observer.current = new IntersectionObserver(callbackIO, configs);
 
-      element && observer.observe(element);
-    }, [observer]);
+        element && observer.current && observer.current.observe(element);
+      } else loadComponent();
+    }, [callbackIO]);
 
     return <Fragment>{theComponent || <DefaultDOM />}</Fragment>;
   }
