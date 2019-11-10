@@ -1,14 +1,24 @@
 {
-  "name": "@adibfirman/react-lazy-viewport",
+  "name": "react-lazy-viewport",
   "version": "1.0.0",
+  "description": "Load your component based on viewport.",
   "source": "src/index.tsx",
+  "repository": "git@github.com:adibfirman/react-lazy-viewport.git",
+  "private": false,
+  "author": "adibfirman <dib.firman@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/foo.m.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "files": [
+    "dist",
+    "utils"
+  ],
   "scripts": {
     "start": "microbundle watch --jsx React.createElement",
-    "build": "microbundle --jsx React.createElement"
+    "build": "microbundle --jsx React.createElement",
+    "lint": "eslint -c .eslintrc ./src --fix",
+    "release": "git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "devDependencies": {
     "@types/react": "^16.9.11",
