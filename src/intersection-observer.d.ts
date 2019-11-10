@@ -12,5 +12,5 @@ interface IntersectionObserver {
   disconnect(): void;
   observe(target: Element): void;
   takeRecords(): IntersectionObserverEntry[];
-  unobserve(target: Element): boid;
+  unobserve(target: Element): void;
 }
