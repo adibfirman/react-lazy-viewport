@@ -1,10 +1,6 @@
 import React, { useState, useCallback, Fragment, useEffect } from "react";
 
 import { makeID } from "../utils";
-import {
-  IntersectionObserverEntry,
-  IntersectionObserver
-} from "./intersection-observer.d";
 
 export default function initMyFunc<T>(
   asyncComp: () => Promise<{ default: T }>
