@@ -22,6 +22,5 @@
   },
   "peerDependencies": {
     "react": "^16.11.0"
-  },
-  "dependencies": {}
+  }
 }
