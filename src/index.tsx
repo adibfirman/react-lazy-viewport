@@ -15,7 +15,7 @@ export default function initMyFunc<T>(
 
   function ReactInitThis(): JSX.Element {
     const [theComponent, setComponent] = useState<T>();
-    const configs = { rootMargin: "0% 0% 10% 0%" };
+    const configs = { rootMargin: "0% 0% 15% 0%" };
     const observer = new IntersectionObserver(callbackIO, configs);
 
     function callbackIO(entries: IntersectionObserverEntry[]) {
