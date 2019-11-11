@@ -10,6 +10,11 @@
   "module": "dist/foo.m.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "reactjs",
+    "lazy"
+  ],
   "files": [
     "dist",
     "utils"
@@ -30,7 +35,9 @@
     "microbundle": "^0.12.0-next.6"
   },
   "peerDependencies": {
-    "@types/react": "^16.9.11",
     "react": "^16.11.0"
+  },
+  "dependencies": {
+    "@types/react": "16.9.11"
   }
 }
