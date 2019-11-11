@@ -21,7 +21,8 @@ export default function initMyFunc<T>(
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           loadComponent(() => {
-            observer.current && observer.current.unobserve(entry.target);
+            const observerIO = observer.current;
+            observerIO && observerIO.unobserve(entry.target);
           });
         }
       });
