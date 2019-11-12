@@ -3,13 +3,16 @@
   "version": "1.0.2",
   "description": "Load your component based on viewport.",
   "source": "src/index.tsx",
-  "repository": "git@github.com:adibfirman/react-lazy-viewport.git",
   "private": false,
   "author": "adibfirman <dib.firman@gmail.com>",
   "main": "dist/index.js",
   "module": "dist/foo.m.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adibfirman/react-lazy-viewport.git"
+  },
   "keywords": [
     "react",
     "reactjs",
