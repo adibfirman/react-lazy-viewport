@@ -1,6 +1,6 @@
 {
   "name": "react-lazy-viewport",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Load your component based on viewport.",
   "source": "src/index.tsx",
   "private": false,
