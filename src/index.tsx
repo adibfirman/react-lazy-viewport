@@ -1,6 +1,8 @@
-import React, { useState, useCallback, Fragment, useEffect } from "react";
+import React, { useState, useLayoutEffect, useCallback, Fragment, useEffect } from "react";
 
-import { makeID } from "../utils";
+import { isBrowser, makeID } from "../utils";
+
+const useEffectCondition = isBrowser ? useEffect : useLayoutEffect
 
 export default function initMyFunc<T>(
   asyncComp: () => Promise<{ default: T }>
@@ -36,8 +38,8 @@ export default function initMyFunc<T>(
       });
     }
 
-    useEffect(() => {
-      if (!!window.IntersectionObserver) {
+    useEffectCondition(() => {
+      if (!!window.IntersectionObserver && isBrowser) {
         const element = document.querySelector(`.${className}`);
         const configs = { rootMargin: "0% 0% 15% 0%" };
         observer.current = new IntersectionObserver(callbackIO, configs);
