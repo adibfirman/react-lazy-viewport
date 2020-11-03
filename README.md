@@ -11,7 +11,7 @@ Load your React Component based on viewport, this library using [Intersection Ob
 
 - [x] Type safe
 - [ ] Preload component
-- [ ] SSR Support
+- [x] SSR Support
 
 ## Instalation
 
